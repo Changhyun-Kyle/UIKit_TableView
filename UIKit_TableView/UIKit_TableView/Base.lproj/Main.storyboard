@@ -19,7 +19,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Vgs-DJ-o4Q">
                                 <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                                 <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="8yi-X7-Tvs">
-                                    <rect key="frame" x="0.0" y="116.99999809265137" width="393" height="44"/>
+                                    <rect key="frame" x="0.0" y="160.33333015441895" width="393" height="44"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain" title="Add Data"/>
@@ -45,6 +45,40 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="customCell" id="htW-OK-OTT" customClass="CustomTableViewCell" customModule="UIKit_TableView" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="99" width="353" height="43.333332061767578"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="htW-OK-OTT" id="Biq-os-vY9">
+                                            <rect key="frame" x="0.0" y="0.0" width="353" height="43.333332061767578"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="que-UI-lKM">
+                                                    <rect key="frame" x="20" y="10.999999999999998" width="42" height="21.333333333333329"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MOh-Ze-X7J">
+                                                    <rect key="frame" x="291" y="10.999999999999998" width="42" height="21.333333333333329"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="MOh-Ze-X7J" secondAttribute="bottom" id="2eB-xu-nQz"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="que-UI-lKM" secondAttribute="bottom" id="9Kk-n3-avi"/>
+                                                <constraint firstItem="que-UI-lKM" firstAttribute="leading" secondItem="Biq-os-vY9" secondAttribute="leadingMargin" id="Rxe-9L-Rbo"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="MOh-Ze-X7J" secondAttribute="trailing" id="fcy-sX-4Vt"/>
+                                                <constraint firstItem="que-UI-lKM" firstAttribute="top" secondItem="Biq-os-vY9" secondAttribute="topMargin" id="t6u-cM-TMa"/>
+                                                <constraint firstItem="MOh-Ze-X7J" firstAttribute="top" secondItem="Biq-os-vY9" secondAttribute="topMargin" id="ucJ-hJ-59e"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="leftLabel" destination="que-UI-lKM" id="vzW-dv-MUa"/>
+                                            <outlet property="rightLabel" destination="MOh-Ze-X7J" id="Znn-hS-ed8"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="8bC-Xf-vdC" id="kOg-Th-oSA"/>
@@ -67,7 +101,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="129" y="-27"/>
+            <point key="canvasLocation" x="127.48091603053435" y="-27.464788732394368"/>
         </scene>
     </scenes>
     <resources>

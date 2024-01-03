@@ -12,12 +12,17 @@ class ViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     let cellIdentifier: String = "cell"
+    let customCellIdentifier: String = "customCell"
     let korean: [String] = ["가","나","다","라","마","바","사","아","자","차","카","타","파","하"]
     let english: [String] = ["A","B","C","D","E","F","G","H","I","G","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
     var dates: [Date] = []
     let dateFormatter: DateFormatter = {
         let formatter: DateFormatter = DateFormatter()
         formatter.dateStyle = .medium
+        return formatter
+    }()
+    let timeeFormatter: DateFormatter = {
+        let formatter: DateFormatter = DateFormatter()
         formatter.timeStyle = .medium
         return formatter
     }()
@@ -55,13 +60,22 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
+        // MARK: - UITableViewCell을 활용하는 dequeueReusableCell을 사용했기 때문에 as 타입 캐스팅 필요
         guard 
+            let customCell: CustomTableViewCell = tableView.dequeueReusableCell(withIdentifier: customCellIdentifier, for: indexPath) as? CustomTableViewCell 
+        else {
+            return UITableViewCell()
+        }
+        
+        guard
             indexPath.section < 2
         else {
-            cell.textLabel?.text = dateFormatter.string(from: dates[indexPath.row])
-            return cell
+            customCell.leftLabel.text = dateFormatter.string(from: dates[indexPath.row])
+            customCell.rightLabel.text = timeeFormatter.string(from: dates[indexPath.row])
+            return customCell
         }
+        
+        let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
         let text: String = indexPath.section == 0 ? korean[indexPath.row] : english[indexPath.row]
         cell.textLabel?.text = text
         return cell

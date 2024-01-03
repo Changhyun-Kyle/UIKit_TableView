@@ -78,6 +78,13 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
         let text: String = indexPath.section == 0 ? korean[indexPath.row] : english[indexPath.row]
         cell.textLabel?.text = text
+        
+        // MARK: - Cell의 재사용
+//        let cell = UITableViewCell()
+//        if indexPath.row == 1 {
+//            cell.backgroundColor = .red
+//        }
+        
         return cell
     }
     

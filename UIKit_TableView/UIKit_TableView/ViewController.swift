@@ -33,6 +33,22 @@ class ViewController: UIViewController {
         tableView.delegate = self
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard
+            let nextViewController: SecondViewController = segue.destination as? SecondViewController
+        else {
+            return
+        }
+        
+        guard 
+            let cell: UITableViewCell = sender as? UITableViewCell
+        else {
+            return
+        }
+        
+        nextViewController.textToSet = cell.textLabel?.text
+    }
+    
     @IBAction func touchUpAddButton(_ sender: UIButton) {
         dates.append(Date())
         // tableView.reloadData()
@@ -61,8 +77,8 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // MARK: - UITableViewCell을 활용하는 dequeueReusableCell을 사용했기 때문에 as 타입 캐스팅 필요
-        guard 
-            let customCell: CustomTableViewCell = tableView.dequeueReusableCell(withIdentifier: customCellIdentifier, for: indexPath) as? CustomTableViewCell 
+        guard
+            let customCell: CustomTableViewCell = tableView.dequeueReusableCell(withIdentifier: customCellIdentifier, for: indexPath) as? CustomTableViewCell
         else {
             return UITableViewCell()
         }
@@ -80,16 +96,16 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         cell.textLabel?.text = text
         
         // MARK: - Cell의 재사용
-//        let cell = UITableViewCell()
-//        if indexPath.row == 1 {
-//            cell.backgroundColor = .red
-//        }
+        //        let cell = UITableViewCell()
+        //        if indexPath.row == 1 {
+        //            cell.backgroundColor = .red
+        //        }
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        guard 
+        guard
             section < 2
         else {
             return nil

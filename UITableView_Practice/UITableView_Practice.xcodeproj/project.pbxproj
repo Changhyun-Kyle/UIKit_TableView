@@ -13,6 +13,7 @@
 		272152B82B4683290001CE7E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 272152B62B4683290001CE7E /* Main.storyboard */; };
 		272152BA2B46832A0001CE7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 272152B92B46832A0001CE7E /* Assets.xcassets */; };
 		272152BD2B46832A0001CE7E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 272152BB2B46832A0001CE7E /* LaunchScreen.storyboard */; };
+		272152C52B4683A80001CE7E /* FamousPerson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272152C42B4683A80001CE7E /* FamousPerson.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		272152B92B46832A0001CE7E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		272152BC2B46832A0001CE7E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		272152BE2B46832A0001CE7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		272152C42B4683A80001CE7E /* FamousPerson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamousPerson.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				272152B02B4683290001CE7E /* AppDelegate.swift */,
 				272152B22B4683290001CE7E /* SceneDelegate.swift */,
 				272152B42B4683290001CE7E /* ViewController.swift */,
+				272152C42B4683A80001CE7E /* FamousPerson.swift */,
 				272152B62B4683290001CE7E /* Main.storyboard */,
 				272152B92B46832A0001CE7E /* Assets.xcassets */,
 				272152BB2B46832A0001CE7E /* LaunchScreen.storyboard */,
@@ -141,6 +144,7 @@
 				272152B52B4683290001CE7E /* ViewController.swift in Sources */,
 				272152B12B4683290001CE7E /* AppDelegate.swift in Sources */,
 				272152B32B4683290001CE7E /* SceneDelegate.swift in Sources */,
+				272152C52B4683A80001CE7E /* FamousPerson.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

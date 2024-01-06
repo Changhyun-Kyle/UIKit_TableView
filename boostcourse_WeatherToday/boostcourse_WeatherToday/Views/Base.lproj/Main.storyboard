@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="oU3-cC-k8Q">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Country View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="CountryViewController" customModule="boostcourse_WeatherToday" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="0YV-xO-16S">
+                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="countryCell" id="oWq-ah-Xz4" customClass="CountryTableViewCell" customModule="boostcourse_WeatherToday" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="42.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="oWq-ah-Xz4" id="gdu-9r-SbF">
+                                            <rect key="frame" x="0.0" y="0.0" width="362.66666666666669" height="42.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="r6r-PR-fhx">
+                                                    <rect key="frame" x="20" y="10.000000000000002" width="90" height="22.666666666666671"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="90" id="EPw-j7-MNs"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ink-GY-kah">
+                                                    <rect key="frame" x="119.99999999999999" y="11.000000000000002" width="234.66666666666663" height="20.666666666666671"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="r6r-PR-fhx" firstAttribute="top" secondItem="gdu-9r-SbF" secondAttribute="top" constant="10" id="Bo8-Iq-txW"/>
+                                                <constraint firstItem="ink-GY-kah" firstAttribute="top" secondItem="gdu-9r-SbF" secondAttribute="topMargin" id="HMu-yh-9XZ"/>
+                                                <constraint firstAttribute="bottom" secondItem="r6r-PR-fhx" secondAttribute="bottom" constant="10" id="M3J-J3-m0K"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="ink-GY-kah" secondAttribute="bottom" id="Wcd-DG-T8o"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="ink-GY-kah" secondAttribute="trailing" id="kAa-KJ-hVm"/>
+                                                <constraint firstItem="ink-GY-kah" firstAttribute="leading" secondItem="r6r-PR-fhx" secondAttribute="trailing" constant="10" id="vXJ-LX-l9d"/>
+                                                <constraint firstItem="r6r-PR-fhx" firstAttribute="leading" secondItem="gdu-9r-SbF" secondAttribute="leading" constant="20" id="wkb-HN-Tco"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="countryName" destination="ink-GY-kah" id="h2F-b8-cyO"/>
+                                            <outlet property="flageImageView" destination="r6r-PR-fhx" id="WHq-4B-Ec0"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="QSY-gu-Kue"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0YV-xO-16S" secondAttribute="trailing" id="75o-vV-I9F"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="0YV-xO-16S" secondAttribute="bottom" id="FB0-v0-7cN"/>
+                            <constraint firstItem="0YV-xO-16S" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="dcF-Hy-3c1"/>
+                            <constraint firstItem="0YV-xO-16S" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="eKR-ba-aRf"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Bzc-1H-qR6"/>
+                    <connections>
+                        <outlet property="countryTableView" destination="0YV-xO-16S" id="CdL-fa-edK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1046.5648854961833" y="-34.507042253521128"/>
+        </scene>
+        <!--City View Controller-->
+        <scene sceneID="6BW-Lk-ub7">
+            <objects>
+                <viewController storyboardIdentifier="CityViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="W01-xA-o5s" customClass="CityViewController" customModule="boostcourse_WeatherToday" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="u2r-aE-z2u">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="anB-EC-egT">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cityCell" id="B09-Ub-r90">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="44.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="B09-Ub-r90" id="J5Z-cp-u7R">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="44.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="W01-xA-o5s" id="bdQ-BT-TKb"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="KPz-fH-Fm2"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="anB-EC-egT" firstAttribute="leading" secondItem="KPz-fH-Fm2" secondAttribute="leading" id="c6k-at-JL7"/>
+                            <constraint firstItem="anB-EC-egT" firstAttribute="top" secondItem="KPz-fH-Fm2" secondAttribute="top" id="iwd-NF-i8T"/>
+                            <constraint firstItem="KPz-fH-Fm2" firstAttribute="trailing" secondItem="anB-EC-egT" secondAttribute="trailing" id="orC-Cr-K7F"/>
+                            <constraint firstItem="KPz-fH-Fm2" firstAttribute="bottom" secondItem="anB-EC-egT" secondAttribute="bottom" id="v3G-uW-aLt"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="caP-hI-956" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1982" y="-35"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="YW0-1n-jt2">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="oU3-cC-k8Q" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="JPJ-pW-qfH">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="t4r-CZ-isH"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Ga-ig-P1A" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="119.84732824427481" y="-34.507042253521128"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
